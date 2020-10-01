@@ -1,11 +1,13 @@
-const express = require('express')
-const { config } = require('./config/index')
-const getMovies = require('./routes/movies')
+const express = require('express');
+const app = express();
 
-const app = express()
+const { config } = require('./config/index');
+const moviesApi = require('./routes/movies');
 
-getMovies(app)
+app.use(express.json());
+
+moviesApi(app);
 
 app.listen(config.port, () => {
   console.log(`Escuchando en http://localhost:${config.port}`);
-})
+});
