@@ -16,7 +16,7 @@ const moviesMock = [
     "year": 1975,
     "cover": "http://dummyimage.com/223x117.jpg/cc0000/ffffff",
     "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
-    "duration": 2044,
+    "duration": 204,
     "contentRating": "PG",
     "source": "http://cafepress.com/in/hac/habitasse.png",
     "tags": ["Comedy|Drama", "Documentary", "Horror|Mystery|Thriller"]

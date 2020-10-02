@@ -1,11 +1,13 @@
 const express = require('express');
 const MoviesService = require('../services/movies');
-const validationHandler = require('../utils/middleware/validationHandler');
+
 const {
   movieIdSchema,
-  movieCreateSchema,
-  movieUpdateSchema,
+  createMovieSchema,
+  updateMovieSchema,
 } = require('../utils/schemas/movies');
+
+const validationHandler = require('../utils/middleware/validationHandler');
 
 const moviesApi = (app) => {
   const router = express.Router();
@@ -48,7 +50,7 @@ const moviesApi = (app) => {
 
   router.post(
     '/',
-    validationHandler(movieCreateSchema),
+    validationHandler(createMovieSchema),
     async (req, res, next) => {
       const { body: movie } = req;
       try {
@@ -67,7 +69,7 @@ const moviesApi = (app) => {
   router.put(
     '/:movieId',
     validationHandler({ movieId: movieIdSchema }, 'params'),
-    validationHandler(movieUpdateSchema),
+    validationHandler(updateMovieSchema),
     async (req, res, next) => {
       const { movieId } = req.params;
       const { body: movie } = req;
