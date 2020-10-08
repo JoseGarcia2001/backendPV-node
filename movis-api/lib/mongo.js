@@ -24,7 +24,6 @@ class MongoLib {
             reject(err);
           }
 
-          console.log('Connected sucefully to mongo');
           resolve(this.client.db(this.dbName));
         });
       });
