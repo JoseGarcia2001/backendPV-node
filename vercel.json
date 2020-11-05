@@ -1,0 +1,22 @@
+{
+  "name": "platzivideo",
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "index.js"
+    }
+  ],
+  "env": {
+    "DB_USER": "@platzivideo-db-user",
+    "DB_PASSWORD": "@platzivideo-db-password",
+    "DB_HOST": "@platzivideo-db-host",
+    "DB_NAME": "@platzivideo-db-name"
+  }
+}
