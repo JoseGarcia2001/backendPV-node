@@ -10,6 +10,7 @@ function withErrorStack(error, stack) {
 }
 
 function logErrors(err, req, res, next) {
+  // eslint-disable-next-line no-console
   console.log(err);
   next(err);
 };

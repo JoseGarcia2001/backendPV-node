@@ -1,8 +1,9 @@
 {
   "name": "movis-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project implements Backend API for Platzi Video",
   "main": "index.js",
+  "repository": "https://github.com/JoseGarcia2001/backendPV-node",
   "scripts": {
     "dev": "DEBUG=app:* nodemon index",
     "start": "NODE_ENV=production node index",
@@ -15,12 +16,18 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/boom": "^9.1.0",
-    "@hapi/joi": "^15.0.3",
+    "@hapi/joi": "^15.1.1",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "helmet": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.0",
-    "mongodb": "^3.6.2"
+    "mongodb": "^3.6.2",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
+    "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
     "eslint": "^7.9.0",
@@ -41,7 +48,7 @@
   "lint-staged": {
     "*.js": "eslint --cache --fix"
   },
-  "nyc" : {
+  "nyc": {
     "all": true,
     "include": [
       "routes",
